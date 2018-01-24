@@ -1,0 +1,175 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x000007fefa497f31, pid=6892, tid=3120
+#
+# JRE version: 6.0_45-b06
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (20.45-b01 mixed mode windows-amd64 compressed oops)
+# Problematic frame:
+# C  [mmgr_dal_ZaberRotationStage.dll+0x7f31]
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000000008ed000):  JavaThread "main" [_thread_in_native, id=3120, stack(0x0000000002740000,0x0000000002840000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x0000000000000000
+
+Registers:
+RAX=0x000040dbe583788a, RBX=0x000000000283e830, RCX=0x0000000000000000, RDX=0x000000000283e830
+RSP=0x000000000283e730, RBP=0x000000000283e7a9, RSI=0x0000000000000025, RDI=0x0000000008355930
+R8 =0x0000000000000025, R9 =0x000000000283e880, R10=0x000000000835af88, R11=0x000000000283e830
+R12=0x000007fefa4a0e68, R13=0x000000000283efa8, R14=0x0000000008355a60, R15=0x000000000283e880
+RIP=0x000007fefa497f31, EFLAGS=0x0000000000010202
+
+Top of Stack: (sp=0x000000000283e730)
+0x000000000283e730:   0000000000000000 00000000083e3400
+0x000000000283e740:   00000000083597a0 000000000283f588
+0x000000000283e750:   000000000283efa8 000007fefa4a0e68
+0x000000000283e760:   000000000283e848 000007fefa4958f5
+0x000000000283e770:   00000000083597a0 000000000283f588
+0x000000000283e780:   0000000008355938 000007fefa4a0e68
+0x000000000283e790:   000000000835a230 0000000000000019
+0x000000000283e7a0:   000000000283e929 0000000077601a4a
+0x000000000283e7b0:   fffffffffffffffe 000000000283e830
+0x000000000283e7c0:   000040dbe583788a 000007fefa49a0b8
+0x000000000283e7d0:   00000000083597a0 000000000283f588
+0x000000000283e7e0:   000007fefa4a0e68 0000000008355930
+0x000000000283e7f0:   000000000835af30 0000000000000001
+0x000000000283e800:   000000000283e929 000007fefa491fe0
+0x000000000283e810:   0000000000000001 000000000835af30
+0x000000000283e820:   0000000008355938 000000000835a230 
+
+Instructions: (pc=0x000007fefa497f31)
+0x000007fefa497f11:   05 e2 f1 00 00 48 33 c4 48 89 45 17 4d 8b f9 41
+0x000007fefa497f21:   8b f0 48 8b da 4c 8b f1 48 89 55 0f 48 8b 49 40
+0x000007fefa497f31:   48 8b 01 41 b1 01 4c 8d 05 f2 96 00 00 49 8b 56
+0x000007fefa497f41:   38 ff 50 08 33 c0 48 89 45 a7 48 89 45 af 48 89 
+
+
+Register to memory mapping:
+
+RAX=0x000040dbe583788a is an unknown value
+RBX=0x000000000283e830 is pointing into the stack for thread: 0x00000000008ed000
+RCX=0x0000000000000000 is an unknown value
+RDX=0x000000000283e830 is pointing into the stack for thread: 0x00000000008ed000
+RSP=0x000000000283e730 is pointing into the stack for thread: 0x00000000008ed000
+RBP=0x000000000283e7a9 is pointing into the stack for thread: 0x00000000008ed000
+RSI=0x0000000000000025 is an unknown value
+RDI=0x0000000008355930 is an unknown value
+R8 =0x0000000000000025 is an unknown value
+R9 =0x000000000283e880 is pointing into the stack for thread: 0x00000000008ed000
+R10=0x000000000835af88 is an unknown value
+R11=0x000000000283e830 is pointing into the stack for thread: 0x00000000008ed000
+R12=0x000007fefa4a0e68 is an unknown value
+R13=0x000000000283efa8 is pointing into the stack for thread: 0x00000000008ed000
+R14=0x0000000008355a60 is an unknown value
+R15=0x000000000283e880 is pointing into the stack for thread: 0x00000000008ed000
+
+
+Stack: [0x0000000002740000,0x0000000002840000],  sp=0x000000000283e730,  free space=1017k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [mmgr_dal_ZaberRotationStage.dll+0x7f31]  ZaberRotationBase::IssueCommand+0x41
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  mmcorej.MMCoreJJNI.CMMCore_loadDevice(JLmmcorej/CMMCore;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V+0
+j  mmcorej.CMMCore.loadDevice(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V+8
+j  optstandalone.OPTstandAlone.main([Ljava/lang/String;)V+39
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0000000007009800 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=5620, stack(0x00000000080d0000,0x00000000081d0000)]
+  0x0000000006ff6800 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=916, stack(0x0000000007fd0000,0x00000000080d0000)]
+  0x0000000006fdf000 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=580, stack(0x0000000007ed0000,0x0000000007fd0000)]
+  0x0000000006fde000 JavaThread "Attach Listener" daemon [_thread_blocked, id=6496, stack(0x0000000007dd0000,0x0000000007ed0000)]
+  0x0000000006fdc800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=5340, stack(0x0000000007cd0000,0x0000000007dd0000)]
+  0x0000000006f8a000 JavaThread "Finalizer" daemon [_thread_blocked, id=5300, stack(0x0000000007bd0000,0x0000000007cd0000)]
+  0x0000000006f83800 JavaThread "Reference Handler" daemon [_thread_blocked, id=4856, stack(0x0000000007ad0000,0x0000000007bd0000)]
+=>0x00000000008ed000 JavaThread "main" [_thread_in_native, id=3120, stack(0x0000000002740000,0x0000000002840000)]
+
+Other Threads:
+  0x0000000006f77800 VMThread [stack: 0x00000000079d0000,0x0000000007ad0000] [id=6064]
+  0x000000000701a800 WatcherThread [stack: 0x00000000081d0000,0x00000000082d0000] [id=5200]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ PSYoungGen      total 76096K, used 1305K [0x00000007ab200000, 0x00000007b06e0000, 0x0000000800000000)
+  eden space 65280K, 2% used [0x00000007ab200000,0x00000007ab346670,0x00000007af1c0000)
+  from space 10816K, 0% used [0x00000007afc50000,0x00000007afc50000,0x00000007b06e0000)
+  to   space 10816K, 0% used [0x00000007af1c0000,0x00000007af1c0000,0x00000007afc50000)
+ PSOldGen        total 173824K, used 0K [0x0000000701600000, 0x000000070bfc0000, 0x00000007ab200000)
+  object space 173824K, 0% used [0x0000000701600000,0x0000000701600000,0x000000070bfc0000)
+ PSPermGen       total 21248K, used 3115K [0x00000006fc400000, 0x00000006fd8c0000, 0x0000000701600000)
+  object space 21248K, 14% used [0x00000006fc400000,0x00000006fc70aeb0,0x00000006fd8c0000)
+
+Code Cache  [0x0000000002840000, 0x0000000002ab0000, 0x0000000005840000)
+ total_blobs=200 nmethods=0 adapters=167 free_code_cache=49927040 largest_free_block=0
+
+Dynamic libraries:
+0x0000000000400000 - 0x000000000042f000 	C:\Program Files\Java\jdk1.6.0_45\bin\java.exe
+0x0000000077800000 - 0x00000000779a9000 	C:\windows\SYSTEM32\ntdll.dll
+0x00000000775e0000 - 0x00000000776ff000 	C:\windows\system32\kernel32.dll
+0x000007fefd6f0000 - 0x000007fefd75c000 	C:\windows\system32\KERNELBASE.dll
+0x00000000752e0000 - 0x0000000075367000 	C:\windows\System32\SYSFER.DLL
+0x000007feff920000 - 0x000007feff9fb000 	C:\windows\system32\ADVAPI32.dll
+0x000007fefe260000 - 0x000007fefe2ff000 	C:\windows\system32\msvcrt.dll
+0x000007fefdf10000 - 0x000007fefdf2f000 	C:\windows\SYSTEM32\sechost.dll
+0x000007fefe8c0000 - 0x000007fefe9ed000 	C:\windows\system32\RPCRT4.dll
+0x000000006d8e0000 - 0x000000006e09c000 	C:\Program Files\Java\jdk1.6.0_45\jre\bin\server\jvm.dll
+0x0000000077700000 - 0x00000000777fa000 	C:\windows\system32\USER32.dll
+0x000007fefe1f0000 - 0x000007fefe257000 	C:\windows\system32\GDI32.dll
+0x000007fefdc00000 - 0x000007fefdc0e000 	C:\windows\system32\LPK.dll
+0x000007fefe300000 - 0x000007fefe3c9000 	C:\windows\system32\USP10.dll
+0x000007fefb630000 - 0x000007fefb66b000 	C:\windows\system32\WINMM.dll
+0x000007fefdc10000 - 0x000007fefdc3e000 	C:\windows\system32\IMM32.DLL
+0x000007feffa00000 - 0x000007feffb09000 	C:\windows\system32\MSCTF.dll
+0x000000006d850000 - 0x000000006d85e000 	C:\Program Files\Java\jdk1.6.0_45\jre\bin\verify.dll
+0x000000006d460000 - 0x000000006d487000 	C:\Program Files\Java\jdk1.6.0_45\jre\bin\java.dll
+0x000000006d8a0000 - 0x000000006d8b2000 	C:\Program Files\Java\jdk1.6.0_45\jre\bin\zip.dll
+0x000007fef26e0000 - 0x000007fef27eb000 	C:\Program Files\Micro-Manager-1.4\MMCoreJ_wrap.dll
+0x000007fefaec0000 - 0x000007fefaee7000 	C:\windows\system32\IPHLPAPI.DLL
+0x000007feff910000 - 0x000007feff918000 	C:\windows\system32\NSI.dll
+0x000007fefae30000 - 0x000007fefae3b000 	C:\windows\system32\WINNSI.DLL
+0x000000006fff0000 - 0x0000000070088000 	C:\windows\system32\MSVCP100.dll
+0x00000000743e0000 - 0x00000000744b2000 	C:\windows\system32\MSVCR100.dll
+0x000007fef6cd0000 - 0x000007fef6d14000 	C:\Program Files\Micro-Manager-1.4\mmgr_dal_SerialManager.dll
+0x000007fefd9a0000 - 0x000007fefd9ed000 	C:\windows\system32\WS2_32.dll
+0x000007fefa490000 - 0x000007fefa4ab000 	C:\Program Files\Micro-Manager-1.4\mmgr_dal_ZaberRotationStage.dll
+0x00000000779d0000 - 0x00000000779d7000 	C:\windows\system32\PSAPI.DLL
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF-8 
+java_command: optstandalone.OPTstandAlone
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.8.0_25
+USERNAME=fogim
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 60 Stepping 3, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 , 64 bit Build 7601 Service Pack 1
+
+CPU:total 8 (4 cores per cpu, 2 threads per core) family 6 model 60 stepping 3, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, ht
+
+Memory: 4k page, physical 16686628k(12530700k free), swap 33371396k(29072900k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (20.45-b01) for windows-amd64 JRE (1.6.0_45-b06), built on Apr  1 2013 12:31:37 by "java_re" with MS VC++ 8.0 (VS2005)
+
+time: Wed Feb 04 15:44:10 2015
+elapsed time: 0 seconds
+
